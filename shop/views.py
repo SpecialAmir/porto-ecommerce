@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
 from django.contrib.auth.models import User
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .serializers import (
         ProductSerializer, CustomerSerializer, CategorySerializer, OrderSerializer,
         UserSerializer
@@ -27,4 +27,4 @@ class OrderViewSet(ModelViewSet):
 class UserViewSet(ModelViewSet):
     serializer_class = UserSerializer
     queryset = User.objects.all()
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticatedOrReadOnly]
