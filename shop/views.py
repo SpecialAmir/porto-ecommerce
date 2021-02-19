@@ -1,7 +1,9 @@
 from rest_framework.viewsets import ModelViewSet
-
+from django.contrib.auth.models import User
+from rest_framework.permissions import AllowAny
 from .serializers import (
-        ProductSerializer, CustomerSerializer, CategorySerializer, OrderSerializer
+        ProductSerializer, CustomerSerializer, CategorySerializer, OrderSerializer,
+        UserSerializer
         )
 from .models import Product, Customer, Category, Order
 
@@ -22,3 +24,7 @@ class CategoryViewSet(ModelViewSet):
 class OrderViewSet(ModelViewSet):
     serializer_class = OrderSerializer
     queryset = Order.objects.all()
+class UserViewSet(ModelViewSet):
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
+    permission_classes = [AllowAny]
