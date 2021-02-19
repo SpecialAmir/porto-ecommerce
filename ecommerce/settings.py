@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '4rsp=8p14qz5&0grsfyn#5!ho!ra+(l2mouehuz&1(1@v-+r!+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['ecommercekhaki.herokuapp.com','127.0.0.1','0.0.0.0']
 
